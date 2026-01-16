@@ -1,0 +1,4 @@
+1. program that will does system call with function of fork, get pid and use use system call wait, 3 pid. 3 process using fork and will implement wait function for wait of the 
+last process
+2. create a fcfs simulation where it shall display avett and avewt. 10 process, diff bt: 3,5,4,3,2,1,0,7,8,1
+3. implement sjf. 5 process, bt: 50.54, 10.11, 33.32, 2.5, 101.1

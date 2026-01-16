@@ -3,14 +3,15 @@
 #include <iomanip>
 #include <string>
 
+using namespace std;
 void printLine(int width) {
-    std::cout << "+" << std::string(width, '-') << "+\n";
+    cout << "+" << string(width, '-') << "+\n";
 }
 
-void calculateFCFS(const std::vector<int>& burstTimes) {
+void calculateFCFS(const vector<int>& burstTimes) {
     int n = burstTimes.size();
-    std::vector<int> waitingTime(n, 0);
-    std::vector<int> turnaroundTime(n, 0);
+    vector<int> waitingTime(n, 0);
+    vector<int> turnaroundTime(n, 0);
 
     
     for (int i = 1; i < n; ++i) {
@@ -35,24 +36,24 @@ void calculateFCFS(const std::vector<int>& burstTimes) {
     
     int width = 50;
     printLine(width);
-    std::cout << "| Process | Burst Time | Waiting Time | Turnaround Time |\n";
+    cout << "| Process | Burst Time | Waiting Time | Turnaround Time |\n";
     printLine(width);
     for (int i = 0; i < n; ++i) {
-        std::cout << "| P" << std::setw(6) << i + 1 << " | "
-                  << std::setw(10) << burstTimes[i] << " | "
-                  << std::setw(12) << waitingTime[i] << " | "
-                  << std::setw(15) << turnaroundTime[i] << " |\n";
+        cout << "| P" << setw(6) << i + 1 << " | "
+                  << setw(10) << burstTimes[i] << " | "
+                  << setw(12) << waitingTime[i] << " | "
+                  << setw(15) << turnaroundTime[i] << " |\n";
     }
     printLine(width);
 
-    std::cout << "\nAverage Waiting Time: " << std::fixed << std::setprecision(2) << avgWT << "\n";
-    std::cout << "Average Turnaround Time: " << std::fixed << std::setprecision(2) << avgTAT << "\n";
+    cout << "\nAverage Waiting Time: " << fixed << setprecision(2) << avgWT << "\n";
+    cout << "Average Turnaround Time: " << fixed << setprecision(2) << avgTAT << "\n";
 }
 
 int main() {
-    std::vector<int> burstTimes = {3, 5, 4, 3, 2, 1, 0, 7, 8, 1};
+    vector<int> burstTimes = {3, 5, 4, 3, 2, 1, 0, 7, 8, 1};
 
-    std::cout << "First-Come-First-Serve (FCFS) Scheduling Simulation\n";
+    cout << "First-Come-First-Serve (FCFS) Scheduling Simulation\n";
     calculateFCFS(burstTimes);
 
     return 0;
